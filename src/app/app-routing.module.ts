@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'view-finder',
+    loadChildren: () => import('./view-finder/view-finder.module').then( m => m.ViewFinderPageModule)
+  },
 ];
 
 @NgModule({

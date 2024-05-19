@@ -1,17 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="display: flex; justify-content: center;">
+        <ion-fab>
+          <ion-fab-button color="transparent" size="small" style="--box-shadow: none;">
+            <ion-icon name="flash"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-col>
+      <ion-col style="display: flex; justify-content: center;">
+        <ion-fab>
+          <ion-fab-button color="transparent" size="small">
+            <ion-icon name="grid"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-col>
+      <ion-col style="display: flex; justify-content: center;">
+        <ion-fab>
+          <ion-fab-button color="transparent" size="small">
+            <ion-icon name="stopwatch"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-col>
+      <ion-col style="display: flex; justify-content: center;">
+        <ion-fab>
+          <ion-fab-button color="transparent" size="small" >
+            <ion-icon name="close"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <div id="container">
     <strong>Ready to create an app?</strong>
