@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
 }
 
@@ -24,4 +24,42 @@
 
 #container a {
   text-decoration: none;
+}
+
+ion-fab-button {
+  --box-shadow: none;
+  margin: 0;
+}
+
+ion-fab {
+  position: relative;
+}
+
+ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edit-buttons ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+}
+
+p {
+  font-size: x-small !important;
+  color: white !important;
+}
+
+.top-bar-icon {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.checking {
+  color: red !important;
 }
