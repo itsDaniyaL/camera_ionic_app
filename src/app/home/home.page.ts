@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  editIconActive = false;
 
   constructor() {}
+
+  onClick() {
+    this.editIconActive = !this.editIconActive;
+  }
 
 }
