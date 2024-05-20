@@ -1,39 +1,125 @@
 <ion-content [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
-      <ion-col style="display: flex; justify-content: center;">
-        <ion-fab>
-          <ion-fab-button color="transparent" size="small" style="--box-shadow: none;">
-            <ion-icon name="flash"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-      </ion-col>
-      <ion-col style="display: flex; justify-content: center;">
-        <ion-fab>
-          <ion-fab-button color="transparent" size="small">
-            <ion-icon name="grid"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-      </ion-col>
-      <ion-col style="display: flex; justify-content: center;">
-        <ion-fab>
-          <ion-fab-button color="transparent" size="small">
-            <ion-icon name="stopwatch"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-      </ion-col>
-      <ion-col style="display: flex; justify-content: center;">
-        <ion-fab>
-          <ion-fab-button color="transparent" size="small" >
-            <ion-icon name="close"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div class="top-bar-icon">
+    <ion-fab>
+      <ion-fab-button color="transparent" size="small" style="--box-shadow: none;">
+        <ion-icon src="assets/svg/flash-icon.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-fab>
+      <ion-fab-button color="transparent" size="small">
+        <ion-icon src="assets/svg/grid-icon.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-fab>
+      <ion-fab-button color="transparent" size="small">
+        <ion-icon src="assets/svg/timer-icon.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-fab>
+      <ion-fab-button color="transparent" size="small" >
+        <ion-icon src="assets/svg/close-icon.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid class="edit-buttons">
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small" (click)="onClick()">
+                <ion-icon src="assets/svg/adjust-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p *ngIf="editIconActive"class="checking">Adjust</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small" >
+                <ion-icon src="assets/svg/effect-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p>Effect</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small">
+                <ion-icon src="assets/svg/preset-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p>Preset</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small" >
+                <ion-icon src="assets/svg/transition-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p>Transition</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small">
+                <ion-icon src="assets/svg/music-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p>Music</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small" >
+                <ion-icon src="assets/svg/sticker-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p>Sticker</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small" >
+                <ion-icon src="assets/svg/text-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p>Text</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-fab>
+              <ion-fab-button color="transparent" size="small" >
+                <ion-icon src="assets/svg/canvas-icon.svg"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <p>Canvas</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
