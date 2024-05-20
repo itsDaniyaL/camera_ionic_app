@@ -1,26 +1,5 @@
 <ion-content [fullscreen]="true">
-  <div class="top-bar-icon">
-    <ion-fab>
-      <ion-fab-button color="transparent" size="small" style="--box-shadow: none;" (click)="openCamera()">
-        <ion-icon src="assets/svg/flash-icon.svg"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    <ion-fab>
-      <ion-fab-button color="transparent" size="small">
-        <ion-icon src="assets/svg/grid-icon.svg"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    <ion-fab>
-      <ion-fab-button color="transparent" size="small">
-        <ion-icon src="assets/svg/timer-icon.svg"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    <ion-fab>
-      <ion-fab-button color="transparent" size="small" >
-        <ion-icon src="assets/svg/close-icon.svg"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-  </div>
+  <app-top-bar-icons></app-top-bar-icons>
 
   <div id="container">
     <ion-grid class="edit-buttons">
@@ -29,10 +8,10 @@
           <div>
             <ion-fab>
               <ion-fab-button color="transparent" size="small" (click)="onClick()">
-                <ion-icon src="assets/svg/adjust-icon.svg"></ion-icon>
+                <ion-icon color="primary" src="assets/svg/adjust-icon.svg"></ion-icon>
               </ion-fab-button>
             </ion-fab>
-            <p *ngIf="editIconActive"class="checking">Adjust</p>
+            <p *ngIf="editIconActive" class="checking">Adjust</p>
           </div>
         </ion-col>
       </ion-row>
