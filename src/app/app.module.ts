@@ -7,8 +7,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CameraPreview } from '@awesome-cordova-plugins/camera-preview/ngx';
-import { TopBarIconsComponent } from './top-bar-icons/top-bar-icons.component';
-import { HomePageModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],

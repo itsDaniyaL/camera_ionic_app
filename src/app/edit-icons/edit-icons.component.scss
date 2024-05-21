@@ -1,0 +1,32 @@
+
+  ion-fab-button {
+    --box-shadow: none;
+    margin: 0;
+  }
+  
+  ion-fab {
+    position: relative;
+  }
+  
+  ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .edit-buttons ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+  }
+  
+  p {
+    font-size: x-small !important;
+    color: white !important;
+  }
+  
+  .checking {
+    color: red !important;
+  }

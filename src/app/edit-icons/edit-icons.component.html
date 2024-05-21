@@ -1,0 +1,14 @@
+<ion-grid class="edit-buttons">
+  <ion-row *ngFor="let icon of icons">
+    <ion-col>
+      <div>
+        <ion-fab>
+          <ion-fab-button color="transparent" size="small" (click)="onClick()">
+            <ion-icon [src]="icon.src"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <p>{{icon.text}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

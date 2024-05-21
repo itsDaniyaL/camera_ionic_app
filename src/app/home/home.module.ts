@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { TopBarIconsComponent } from '../top-bar-icons/top-bar-icons.component';
+import { EditIconsComponent } from '../edit-icons/edit-icons.component';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { TopBarIconsComponent } from '../top-bar-icons/top-bar-icons.component';
     IonicModule,
     HomePageRoutingModule,
   ],
-  declarations: [HomePage, TopBarIconsComponent],
-  exports: [TopBarIconsComponent],
+  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent],
+  exports: [TopBarIconsComponent, EditIconsComponent],
 })
 export class HomePageModule {}

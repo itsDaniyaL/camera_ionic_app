@@ -7,6 +7,12 @@ import { CameraPreview, CameraPreviewOptions } from '@awesome-cordova-plugins/ca
   styleUrls: ['./top-bar-icons.component.scss'],
 })
 export class TopBarIconsComponent  implements OnInit {
+  icons = [
+    { src: 'assets/svg/flash-icon.svg', action: '' },
+    { src: 'assets/svg/grid-icon.svg', action: '' },
+    { src: 'assets/svg/timer-icon.svg', action: '' },
+    { src: 'assets/svg/close-icon.svg', action: '' }
+  ];
 
   constructor(
     private cameraPreview: CameraPreview,
