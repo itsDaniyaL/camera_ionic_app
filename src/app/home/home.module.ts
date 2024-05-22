@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { TopBarIconsComponent } from '../top-bar-icons/top-bar-icons.component';
+import { EditIconsComponent } from '../edit-icons/edit-icons.component';
 
 
 @NgModule({
@@ -12,8 +14,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent],
+  exports: [TopBarIconsComponent, EditIconsComponent],
 })
 export class HomePageModule {}

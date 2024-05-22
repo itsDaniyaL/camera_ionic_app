@@ -54,10 +54,17 @@ p {
   color: white !important;
 }
 
-.top-bar-icon {
+.top-bar-icon > div {
   display: flex;
   justify-content: space-between;
   margin: 0 10px;
+  max-width: 630px;
+  width: 100%;
+}
+
+.top-bar-icon {
+  justify-content: center;
+  display: flex;
 }
 
 .checking {

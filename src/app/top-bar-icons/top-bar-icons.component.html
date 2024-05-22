@@ -1,0 +1,13 @@
+<div class="top-bar-icon">
+  <div>
+    <ion-fab *ngFor="let icon of icons">
+      <ion-fab-button 
+        color="transparent" 
+        size="small" 
+        style="--box-shadow: none;" 
+        (click)="startCamera()">
+        <ion-icon [src]="icon.src"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</div>
