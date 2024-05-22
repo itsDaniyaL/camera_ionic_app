@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-icons.component.scss'],
 })
 export class EditIconsComponent  implements OnInit {
-  editIconActive = false;
+  editIconActive = "";
 
   icons = [
     { src: 'assets/svg/adjust-icon.svg', text: 'Adjust', action: '' },
@@ -23,7 +23,11 @@ export class EditIconsComponent  implements OnInit {
 
   ngOnInit() {}
 
-  onClick() {
-    this.editIconActive = !this.editIconActive;
+  onClick(icon: { src: string; text: string; action: string }) {
+    if(this.editIconActive === icon.text) {
+      this.editIconActive = "";
+      return;
+    }
+    this.editIconActive = icon.text;
   }
 }

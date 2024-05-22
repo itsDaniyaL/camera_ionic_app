@@ -1,13 +1,13 @@
 <ion-grid class="edit-buttons">
   <ion-row *ngFor="let icon of icons">
     <ion-col>
-      <div>
+      <div [ngClass]="editIconActive === icon.text ? 'isActive' : 'notActive'">
         <ion-fab>
-          <ion-fab-button color="transparent" size="small" (click)="onClick()">
+          <ion-fab-button color="transparent" size="small" (click)="onClick(icon)">
             <ion-icon [src]="icon.src"></ion-icon>
           </ion-fab-button>
         </ion-fab>
-        <p>{{icon.text}}</p>
+        <p *ngIf="editIconActive !== icon.text">{{icon.text}}</p>
       </div>
     </ion-col>
   </ion-row>
