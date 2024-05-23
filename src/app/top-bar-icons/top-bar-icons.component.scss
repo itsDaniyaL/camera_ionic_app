@@ -1,0 +1,28 @@
+ion-fab-button {
+  --box-shadow: none;
+  margin: 0;
+}
+
+ion-fab {
+  position: relative;
+}
+
+ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top-bar-icon > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  max-width: 630px;
+  width: 100%;
+}
+
+.top-bar-icon {
+  justify-content: center;
+  display: flex;
+}
