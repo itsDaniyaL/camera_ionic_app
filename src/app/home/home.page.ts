@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CameraPreview, CameraPreviewOptions } from '@awesome-cordova-plugins/camera-preview/ngx';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -36,7 +37,10 @@ export class HomePage {
     };
     // Start Camera
     const camera = await this.cameraPreview.startCamera(options);
-    // alert(JSON.stringify(this.cameraPreview.getCameraCharacteristics()))
+    // await this.cameraPreview.setFlashMode(this.cameraPreview.FLASH_MODE.TORCH)
+    // alert(JSON.stringify(this.cameraPreview.setFlashMode(this.cameraPreview.FLASH_MODE.TORCH)))
+    alert(JSON.stringify(this.cameraPreview.getCameraCharacteristics()))
+    
     // For Temp Purpose
     // setTimeout(() => {
     //   this.stopCamera()

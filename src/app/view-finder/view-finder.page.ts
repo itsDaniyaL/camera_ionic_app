@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CameraPreview } from '@capacitor-community/camera-preview';
 @Component({
   selector: 'app-view-finder',
   templateUrl: './view-finder.page.html',
@@ -11,5 +11,19 @@ export class ViewFinderPage implements OnInit {
 
   ngOnInit() {
   }
+
+
+  
+  openCamera() {
+
+
+    CameraPreview.start({ parent: "cameraPreview"});
+
+
+    setTimeout(() => {
+      CameraPreview.stop();
+    }, 5000);
+  }
+
 
 }
