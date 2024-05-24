@@ -1,7 +1,33 @@
-<ion-content [fullscreen]="true">
-  <app-top-bar-icons></app-top-bar-icons>
-
-  <div id="container">
+<ion-content [fullscreen]="true" style="--background: transparent !important;">
+  <app-top-bar-icons *ngIf="isCameraStarted"></app-top-bar-icons>
+  <div id="container" *ngIf="isCameraStarted">
     <app-edit-icons></app-edit-icons>
   </div>
+
+
+  <ion-button *ngIf="!isCameraStarted" (click)="openCamera()" expand="block" fill="clear" shape="round">
+    Open Camera
+  </ion-button>
+
+
+  <!-- Switch camera -->
+  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="switchCamera()">
+      <ion-icon name="camera-reverse-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Take picture -->
+  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="stopCamera()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- open -->
+  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="openCamera()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

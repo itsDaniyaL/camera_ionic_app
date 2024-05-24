@@ -9,6 +9,8 @@ import { CameraPreview, CameraPreviewOptions } from '@awesome-cordova-plugins/ca
 export class HomePage {
   editIconActive = false;
 
+  isCameraStarted = false;
+
   constructor(
     private cameraPreview: CameraPreview,
   ) { }
@@ -18,7 +20,8 @@ export class HomePage {
   }
 
 
-  openCamera(){
+  openCamera() {
+    this.isCameraStarted = true;
     this.startCamera();
   }
   async startCamera() {
@@ -29,15 +32,15 @@ export class HomePage {
       width: w,
       camera: "rear",
       storeToFile: false,
+      toBack: true
     };
     // Start Camera
-    await this.cameraPreview.startCamera(options);
-
-
+    const camera = await this.cameraPreview.startCamera(options);
+    // alert(JSON.stringify(this.cameraPreview.getCameraCharacteristics()))
     // For Temp Purpose
-    setTimeout(() => {
-      this.stopCamera()
-    }, 5000);
+    // setTimeout(() => {
+    //   this.stopCamera()
+    // }, 5000);
 
     // For Flash
     // await this.cameraPreview.setFlashMode(this.cameraPreview.FLASH_MODE.TORCH)
@@ -50,6 +53,10 @@ export class HomePage {
 
 
   stopCamera() {
+    this.isCameraStarted = false;
     this.cameraPreview.stopCamera();
+  }
+  switchCamera() {
+    this.cameraPreview.switchCamera();
   }
 }
