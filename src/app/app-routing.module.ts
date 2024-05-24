@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'view-finder',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {

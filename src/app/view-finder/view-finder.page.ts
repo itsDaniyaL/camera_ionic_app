@@ -13,17 +13,13 @@ export class ViewFinderPage implements OnInit {
   }
 
 
-  
-  openCamera() {
 
-
-    CameraPreview.start({ parent: "cameraPreview"});
-
-
-    setTimeout(() => {
-      CameraPreview.stop();
-    }, 5000);
+  async openCamera() {
+    await CameraPreview.start({ parent: "cameraPreview" });
   }
 
+  async stopCamera() {
+    await CameraPreview.stop();
+  }
 
 }
