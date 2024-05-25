@@ -3,7 +3,7 @@
     <ion-col>
       <div [ngClass]="editIconActive === icon.text ? 'isActive' : 'notActive'">
         <ion-fab>
-          <ion-fab-button color="transparent" size="small" (click)="onClick(icon)">
+          <ion-fab-button color="transparent" size="small" (click)="handleEditSelected(icon)">
             <ion-icon [src]="icon.src"></ion-icon>
           </ion-fab-button>
         </ion-fab>
