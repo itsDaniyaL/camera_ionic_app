@@ -37,13 +37,16 @@ export class HomePage {
     }
     this.editIconActive = icon.text;
   }
-  editIconActive = false;
 
   isCameraStarted = false;
 
   constructor(
     // private cameraPreview: CameraPreview,
-  ) { }
+  ) {
+    setTimeout(() => {
+      CameraPreview.stop();
+    }, 1000);
+   }
 
   // openCamera() {
   //   this.isCameraStarted = true;
