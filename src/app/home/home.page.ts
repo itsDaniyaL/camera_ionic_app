@@ -28,10 +28,10 @@ export class HomePage {
   //   { width: '22px', height: '22px', label: '1:1' },
   // ];
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   editSelected(icon: { src: string; text: string; action: string }) {
-    if(this.editIconActive === icon.text) {
+    if (this.editIconActive === icon.text) {
       this.editIconActive = "";
       return;
     }
@@ -46,7 +46,7 @@ export class HomePage {
     setTimeout(() => {
       CameraPreview.stop();
     }, 1000);
-   }
+  }
 
   // openCamera() {
   //   this.isCameraStarted = true;
@@ -91,7 +91,11 @@ export class HomePage {
 
 
   async openCamera() {
-    await CameraPreview.start({ parent: "cameraPreview", position: 'front', toBack: true });
+    // alert(window.screen.height)
+    // alert(window.screen.width)
+
+    this.capturedImage = null
+    await CameraPreview.start({ width: window.screen.width, height: window.screen.height,parent: "cameraPreview", position: 'front', toBack: true, className: 'camera-video-div' });
     this.isCameraStarted = true;
   }
 
@@ -104,4 +108,26 @@ export class HomePage {
   async switchCamera() {
     await CameraPreview.flip();
   }
+
+  capturedImage: any = null
+  async takePicture() {
+    const image = await CameraPreview.capture({ width: window.screen.width, height: window.screen.height, quality: 100 });
+    // alert(JSON.stringify(image))
+    this.capturedImage = "data:image/jepg;base64," + image.value
+
+    this.stopCamera()
+  }
+
+
+
+  rotateImage = false
+  RotateImage() {
+    const videoDiv = document.getElementsByClassName('camera-video-div');
+    if (videoDiv.length) {
+      this.rotateImage = !this.rotateImage
+      this.rotateImage ? videoDiv[0].classList.add('rotate-div') : videoDiv[0].classList.remove('rotate-div')
+    }
+  }
+
+
 }
