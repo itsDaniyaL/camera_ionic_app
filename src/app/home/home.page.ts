@@ -7,16 +7,32 @@ import { CameraPreview, CameraPreviewOptions } from '@awesome-cordova-plugins/ca
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  editIconActive = false;
+  editIconActive = "";
+
+  icons = [
+    { src: 'assets/svg/adjust-icon.svg', text: 'Adjust', action: '' },
+    { src: 'assets/svg/effect-icon.svg', text: 'Effect', action: '' },
+    { src: 'assets/svg/preset-icon.svg', text: 'Preset', action: '' },
+    { src: 'assets/svg/transition-icon.svg', text: 'Transition', action: '' },
+    { src: 'assets/svg/music-icon.svg', text: 'Music', action: '' },
+    { src: 'assets/svg/sticker-icon.svg', text: 'Sticker', action: '' },
+    { src: 'assets/svg/text-icon.svg', text: 'Text', action: '' },
+    { src: 'assets/svg/canvas-icon.svg', text: 'Canvas', action: '' },
+  ]
+
+  ngOnInit() {}
+
+  editSelected(icon: { src: string; text: string; action: string }) {
+    if(this.editIconActive === icon.text) {
+      this.editIconActive = "";
+      return;
+    }
+    this.editIconActive = icon.text;
+  }
 
   constructor(
     private cameraPreview: CameraPreview,
   ) { }
-
-  onClick() {
-    this.editIconActive = !this.editIconActive;
-  }
-
 
   openCamera(){
     this.startCamera();
