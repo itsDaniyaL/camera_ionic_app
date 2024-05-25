@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-edit-icons',
   templateUrl: './edit-icons.component.html',
   styleUrls: ['./edit-icons.component.scss'],
 })
-export class EditIconsComponent  implements OnInit {
-  editIconActive = "";
+export class EditIconsComponent implements OnInit {
+  @Input() editIconActive: string;
+  @Output() editSelected = new EventEmitter<{ src: string; text: string; action: string }>();
 
   icons = [
     { src: 'assets/svg/adjust-icon.svg', text: 'Adjust', action: '' },
@@ -17,17 +18,15 @@ export class EditIconsComponent  implements OnInit {
     { src: 'assets/svg/sticker-icon.svg', text: 'Sticker', action: '' },
     { src: 'assets/svg/text-icon.svg', text: 'Text', action: '' },
     { src: 'assets/svg/canvas-icon.svg', text: 'Canvas', action: '' },
-  ]
+  ];
 
-  constructor() { }
+  constructor() { 
+    this.editIconActive = "";
+  }
+
+  handleEditSelected(icon: { src: string; text: string; action: string }) {
+    this.editSelected.emit(icon);
+  }
 
   ngOnInit() {}
-
-  onClick(icon: { src: string; text: string; action: string }) {
-    if(this.editIconActive === icon.text) {
-      this.editIconActive = "";
-      return;
-    }
-    this.editIconActive = icon.text;
-  }
 }

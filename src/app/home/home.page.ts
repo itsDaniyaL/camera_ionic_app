@@ -10,18 +10,43 @@ import { CameraPreview } from '@capacitor-community/camera-preview';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  editIconActive = false;
+  editIconActive = "";
+
+  canvasButtonsData = [
+    { width: '15px', height: '22px', label: '9:16' },
+    { width: '22px', height: '15px', label: '16:9' },
+    { width: '16px', height: '20px', label: '3:4' },
+    { width: '20px', height: '16px', label: '4:3' },
+    { width: '22px', height: '22px', label: '1:1' },
+  ];
+
+  // canvasButtonsData = [
+  //   { width: '15px', height: '22px', label: '9:16' },
+  //   { width: '22px', height: '15px', label: '16:9' },
+  //   { width: '16px', height: '20px', label: '3:4' },
+  //   { width: '20px', height: '16px', label: '4:3' },
+  //   { width: '22px', height: '22px', label: '1:1' },
+  // ];
+
+  ngOnInit() {}
+
+  editSelected(icon: { src: string; text: string; action: string }) {
+    if(this.editIconActive === icon.text) {
+      this.editIconActive = "";
+      return;
+    }
+    this.editIconActive = icon.text;
+  }
 
   isCameraStarted = false;
 
   constructor(
     // private cameraPreview: CameraPreview,
-  ) { }
-
-  onClick() {
-    this.editIconActive = !this.editIconActive;
-  }
-
+  ) {
+    setTimeout(() => {
+      CameraPreview.stop();
+    }, 1000);
+   }
 
   // openCamera() {
   //   this.isCameraStarted = true;
