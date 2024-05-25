@@ -9,16 +9,21 @@ import { CameraPreview, CameraPreviewOptions } from '@awesome-cordova-plugins/ca
 export class HomePage {
   editIconActive = "";
 
-  icons = [
-    { src: 'assets/svg/adjust-icon.svg', text: 'Adjust', action: '' },
-    { src: 'assets/svg/effect-icon.svg', text: 'Effect', action: '' },
-    { src: 'assets/svg/preset-icon.svg', text: 'Preset', action: '' },
-    { src: 'assets/svg/transition-icon.svg', text: 'Transition', action: '' },
-    { src: 'assets/svg/music-icon.svg', text: 'Music', action: '' },
-    { src: 'assets/svg/sticker-icon.svg', text: 'Sticker', action: '' },
-    { src: 'assets/svg/text-icon.svg', text: 'Text', action: '' },
-    { src: 'assets/svg/canvas-icon.svg', text: 'Canvas', action: '' },
-  ]
+  canvasButtonsData = [
+    { width: '15px', height: '22px', label: '9:16' },
+    { width: '22px', height: '15px', label: '16:9' },
+    { width: '16px', height: '20px', label: '3:4' },
+    { width: '20px', height: '16px', label: '4:3' },
+    { width: '22px', height: '22px', label: '1:1' },
+  ];
+
+  // canvasButtonsData = [
+  //   { width: '15px', height: '22px', label: '9:16' },
+  //   { width: '22px', height: '15px', label: '16:9' },
+  //   { width: '16px', height: '20px', label: '3:4' },
+  //   { width: '20px', height: '16px', label: '4:3' },
+  //   { width: '22px', height: '22px', label: '1:1' },
+  // ];
 
   ngOnInit() {}
 

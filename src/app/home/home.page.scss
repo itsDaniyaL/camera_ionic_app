@@ -70,3 +70,67 @@ p {
 .checking {
   color: red !important;
 }
+
+.bottom-container {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button {
+  width: 60px;
+  height: 79px;
+  background: #000000;
+  opacity: 80%;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 20px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 5px;
+}
+
+.icon-label {
+  margin: 4px 0;
+  font-size: 12px;
+  color: #959A9C;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.action {
+  margin: 0 15px;
+  font-size: 12px;
+}
+
+.action-ratio {
+  font-weight: medium;
+  background: linear-gradient(90deg, rgba(255,153,0,1) 0%, rgba(255,223,141,1) 36%, rgba(209,153,9,1) 67%, rgba(255,231,103,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
