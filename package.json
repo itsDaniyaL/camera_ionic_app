@@ -23,6 +23,7 @@
     "@angular/forms": "^17.0.2",
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
+    "@angular/pwa": "^17.3.8",
     "@angular/router": "^17.0.2",
     "@awesome-cordova-plugins/camera-preview": "^6.7.0",
     "@capacitor-community/camera-preview": "^6.0.0",
