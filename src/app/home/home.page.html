@@ -1,34 +1,15 @@
-<ion-content [fullscreen]="true" style="--background: transparent !important;">
-  <img *ngIf="imageURL" [src]="imageURL" alt="" srcset="">
-  <app-top-bar-icons *ngIf="isCameraStarted"></app-top-bar-icons>
 
-  <div id="container" *ngIf="isCameraStarted">
+<ion-content [fullscreen]="true">
+  <!-- <img *ngIf="imageURL" [src]="imageURL" alt="" srcset=""> -->
+  <app-top-bar-icons></app-top-bar-icons>
+
+  <div id="container">
     <app-edit-icons [editIconActive]="editIconActive" (editSelected)="editSelected($event)"></app-edit-icons>
-    <!-- <div id="container" *ngIf="isCameraStarted">
-      <app-edit-icons></app-edit-icons>
-    </div> -->
-
-
-
-
-
-
   </div>
-  <!-- This code is for ratio compoenent -->
-  <div *ngIf="editIconActive === 'Canvas'" class="bottom-container">
-    <div class="button-container">
-      <div *ngFor="let icon of canvasButtonsData" class="dani-button">
-        <div class="icon-wrapper" button>
-          <div [style.width]="icon.width" [style.height]="icon.height" class="icon"></div>
-        </div>
-        <span class="icon-label">{{ icon.label }}</span>
-      </div>
-    </div>
-    <div class="action-bar">
-      <div class="action action-ratio">RATIO</div>
-      <div class="action" (click)="RotateImage()">ROTATE</div>
-    </div>
-  </div>
+</ion-content>
+
+<app-canvas-section [editIconActive]="editIconActive"></app-canvas-section>
+<app-adjust-section [editIconActive]="editIconActive"></app-adjust-section>
 
   <!-- This code is for ratio compoenent -->
 
@@ -45,8 +26,6 @@
 
 
   <!-- This limit. -->
-
-
 
 
   <ion-button *ngIf="!isCameraStarted" (click)="openCamera()" expand="block" fill="clear" shape="round">
@@ -77,3 +56,4 @@
   <div id="cameraPreview"></div>
   <img *ngIf="capturedImage" [src]="capturedImage" style="transform: rotate(-90deg);" alt="">
 </ion-content>
+

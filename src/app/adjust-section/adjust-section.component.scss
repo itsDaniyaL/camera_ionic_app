@@ -1,0 +1,48 @@
+.bottom-container {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+}
+
+.flex-container {
+    display: flex;
+}
+  
+.center-content {
+  justify-content: center;
+}
+
+.max-width-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.max-width-container::-webkit-scrollbar { 
+  display: none;
+}
+
+.icon-wrapper {
+  flex: 0 0 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #212122;
+  background: transparent;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-wrapper {
+  background: #000000;
+  opacity: 80%;
+  border: 1px solid #000000;
+  border-radius: 35px;
+}
