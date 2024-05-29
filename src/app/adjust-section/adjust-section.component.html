@@ -1,0 +1,19 @@
+<div *ngIf="editIconActive === 'Adjust'" class="bottom-container">
+  <div class="flex-container center-content">
+    <div class="flex-container max-width-container">
+      <div
+        class="icon-wrapper"
+        *ngFor="let button of adjustButtonsData"
+      >
+        <div class="button-wrapper">
+          <div class="inner-icon-wrapper">
+            <ion-fab>
+              <!-- <ion-fab-button color="transparent" size="small">
+                <ion-icon [src]="button.icon"></ion-icon>
+              </ion-fab-button> -->
+            </ion-fab>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

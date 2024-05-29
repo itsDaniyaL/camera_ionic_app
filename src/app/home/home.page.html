@@ -1,73 +1,12 @@
-<ion-content [fullscreen]="true" style="--background: transparent !important;">
-  <app-top-bar-icons *ngIf="isCameraStarted"></app-top-bar-icons>
+<ion-content [fullscreen]="true">
+  <app-top-bar-icons></app-top-bar-icons>
 
-  <div id="container" *ngIf="isCameraStarted">
+  <div id="container">
     <app-edit-icons [editIconActive]="editIconActive" (editSelected)="editSelected($event)"></app-edit-icons>
-    <!-- <div id="container" *ngIf="isCameraStarted">
-      <app-edit-icons></app-edit-icons>
-    </div> -->
-
-
-
-
-
-    <!-- This code is for ratio compoenent -->
-    <div *ngIf="editIconActive === 'Canvas'" class="bottom-container">
-      <div class="button-container">
-        <div *ngFor="let icon of canvasButtonsData" class="dani-button">
-          <div class="icon-wrapper">
-            <div [style.width]="icon.width" [style.height]="icon.height" class="icon"></div>
-          </div>
-          <span class="icon-label">{{ icon.label }}</span>
-        </div>
-      </div>
-      <div class="action-bar">
-        <div class="action action-ratio">RATIO</div>
-        <div class="action">ROTATE</div>
-      </div>
-    </div>
-
-    <div *ngIf="editIconActive === 'Adjust'" class="bottom-container">
-      <div
-        style="width: 56px; height: 56px; background: #000000; opacity: 80%; border: 1px solid #000000; border-radius: 35px; display: flex; justify-content: center; align-items: center;">
-        <div
-          style="width: 52px; height: 52px; border: 2px solid #212122; background: transparent; border-radius: 30px;">
-
-        </div>
-      </div>
-    </div>
-    <!-- This code is for ratio compoenent -->
-
   </div>
-
-
-
-
-
-  <ion-button *ngIf="!isCameraStarted" (click)="openCamera()" expand="block" fill="clear" shape="round">
-    Open Camera App
-  </ion-button>
-
-
-  <!-- Switch camera -->
-  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button (click)="switchCamera()">
-      <ion-icon name="camera-reverse-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <!-- Take picture -->
-  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="stopCamera()">
-      <ion-icon name="close-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <!-- open -->
-  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="openCamera()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-  <div id="cameraPreview"></div>
 </ion-content>
+
+<app-canvas-section [editIconActive]="editIconActive"></app-canvas-section>
+<app-adjust-section [editIconActive]="editIconActive"></app-adjust-section>
+
+
