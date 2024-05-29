@@ -7,6 +7,8 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TopBarIconsComponent } from '../top-bar-icons/top-bar-icons.component';
 import { EditIconsComponent } from '../edit-icons/edit-icons.component';
+import { CanvasSectionComponent } from '../canvas-section/canvas-section.component';
+import { AdjustSectionComponent } from '../adjust-section/adjust-section.component';
 
 
 @NgModule({
@@ -16,7 +18,7 @@ import { EditIconsComponent } from '../edit-icons/edit-icons.component';
     IonicModule,
     HomePageRoutingModule,
   ],
-  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent],
-  exports: [TopBarIconsComponent, EditIconsComponent],
+  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent],
+  exports: [TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent],
 })
 export class HomePageModule {}
