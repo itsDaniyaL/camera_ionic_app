@@ -73,7 +73,7 @@ p {
 
 .bottom-container {
   position: absolute;
-  bottom: 5%;
+  bottom: 12%;
   width: 100%;
 }
 
@@ -144,4 +144,8 @@ ion-fab-button {
   --background-hover: transparent;
   --border-color: transparent;
   --color: #ffffff;
+}
+
+.rotate-div{
+  transform: rotate(90deg) !important;
 }
