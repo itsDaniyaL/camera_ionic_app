@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 // import { CameraPreview, CameraPreviewOptions } from '@awesome-cordova-plugins/camera-preview/ngx';
 import { CameraPreview } from '@capacitor-community/camera-preview';
 
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Component({
   selector: 'app-home',
@@ -95,22 +95,28 @@ export class HomePage {
 
 
     const takePicture = async () => {
+      // setTimeout(() => {
+      //   document.getElementsByTagName('pwa-camera-modal-instance')[0].style.display = 'block';
+      // }, 5000);
       const image = await Camera.getPhoto({
         quality: 90,
         allowEditing: true,
-        resultType: CameraResultType.Uri
+        source: CameraSource.Prompt,
+        resultType: CameraResultType.Uri,
       });
-    
+
+
+
       // image.webPath will contain a path that can be set as an image src.
       // You can access the original file using image.path, which can be
       // passed to the Filesystem API to read the raw data of the image,
       // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-      var imageUrl = image.webPath;
-    
+      this.imageURL = image.webPath;
+
+
       // Can be set to the src of an image now
       // imageElement.src = imageUrl;
     };
-
 
 
     await takePicture();
@@ -122,6 +128,7 @@ export class HomePage {
     // await CameraPreview.start({ width: window.screen.width, height: window.screen.height,parent: "cameraPreview", position: 'front', toBack: true, className: 'camera-video-div' });
     // this.isCameraStarted = true;
   }
+  imageURL: string | null | undefined = null
 
   async stopCamera() {
     await CameraPreview.stop();

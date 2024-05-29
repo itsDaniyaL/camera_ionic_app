@@ -1,4 +1,5 @@
 <ion-content [fullscreen]="true" style="--background: transparent !important;">
+  <img *ngIf="imageURL" [src]="imageURL" alt="" srcset="">
   <app-top-bar-icons *ngIf="isCameraStarted"></app-top-bar-icons>
 
   <div id="container" *ngIf="isCameraStarted">
