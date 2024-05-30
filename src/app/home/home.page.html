@@ -1,27 +1,13 @@
 
 <ion-content [fullscreen]="true">
-  <!-- <img *ngIf="imageURL" [src]="imageURL" alt="" srcset=""> -->
   <app-top-bar-icons></app-top-bar-icons>
 
   <div id="container">
     <app-edit-icons [editIconActive]="editIconActive" (editSelected)="editSelected($event)"></app-edit-icons>
   </div>
-</ion-content>
 
 <app-canvas-section [editIconActive]="editIconActive"></app-canvas-section>
 <app-adjust-section [editIconActive]="editIconActive"></app-adjust-section>
-
-  <!-- This code is for ratio compoenent -->
-
-  <div *ngIf="editIconActive === 'Adjust'" class="bottom-container">
-    <div
-      style="width: 56px; height: 56px; background: #000000; opacity: 80%; border: 1px solid #000000; border-radius: 35px; display: flex; justify-content: center; align-items: center;">
-      <div style="width: 52px; height: 52px; border: 2px solid #212122; background: transparent; border-radius: 30px;">
-      </div>
-    </div>
-  </div>
-
-
 
 
 
@@ -35,25 +21,25 @@
 
   <!-- Switch camera -->
   <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button (click)="switchCamera()">
+    <!-- <ion-fab-button (click)="switchCamera()">
       <ion-icon name="camera-reverse-outline"></ion-icon>
-    </ion-fab-button>
+    </ion-fab-button> -->
   </ion-fab>
 
   <!-- Take picture -->
   <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="stopCamera()">
+    <!-- <ion-fab-button (click)="stopCamera()">
       <ion-icon name="close-outline"></ion-icon>
-    </ion-fab-button>
+    </ion-fab-button> -->
   </ion-fab>
 
   <!-- open -->
   <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="takePicture()">
+    <!-- <ion-fab-button (click)="takePicture()">
       <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
+    </ion-fab-button> -->
   </ion-fab>
   <div id="cameraPreview"></div>
-  <img *ngIf="capturedImage" [src]="capturedImage" style="transform: rotate(-90deg);" alt="">
+  <!-- <img *ngIf="capturedImage" [src]="capturedImage" style="transform: rotate(-90deg);" alt=""> -->
 </ion-content>
 
