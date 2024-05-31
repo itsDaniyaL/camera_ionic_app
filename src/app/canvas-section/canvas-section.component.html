@@ -1,14 +1,12 @@
-<div *ngIf="editIconActive === 'Canvas'" class="bottom-container">
-  <div class="button-container">
-    <div *ngFor="let icon of canvasButtonsData" class="button">
-      <div class="icon-wrapper">
-        <div [style.width]="icon.width" [style.height]="icon.height" class="icon"></div>
-      </div>
-      <span class="icon-label">{{ icon.label }}</span>
+<div class="button-container">
+  <div *ngFor="let icon of canvasButtonsData" class="button">
+    <div class="icon-wrapper">
+      <div [style.width]="icon.width" [style.height]="icon.height" class="icon"></div>
     </div>
+    <span class="icon-label">{{ icon.label }}</span>
   </div>
-  <div class="action-bar">
-    <div class="action action-ratio">RATIO</div>
-    <div class="action">ROTATE</div>
-  </div>
+</div>
+<div class="action-bar">
+  <div class="action action-ratio">RATIO</div>
+  <div class="action">ROTATE</div>
 </div>

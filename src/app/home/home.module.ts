@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,7 @@ import { TopBarIconsComponent } from '../top-bar-icons/top-bar-icons.component';
 import { EditIconsComponent } from '../edit-icons/edit-icons.component';
 import { CanvasSectionComponent } from '../canvas-section/canvas-section.component';
 import { AdjustSectionComponent } from '../adjust-section/adjust-section.component';
+import { EffectSectionComponent } from '../effect-section/effect-section.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AdjustSectionComponent } from '../adjust-section/adjust-section.compone
     IonicModule,
     HomePageRoutingModule,
   ],
-  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent],
-  exports: [TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent],
+  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, EffectSectionComponent],
+  exports: [TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, EffectSectionComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePageModule {}

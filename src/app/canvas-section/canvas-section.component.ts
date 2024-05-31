@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./canvas-section.component.scss'],
 })
 export class CanvasSectionComponent  implements OnInit {
-  @Input() editIconActive: string;
 
   canvasButtonsData = [
     { width: '15px', height: '22px', label: '9:16' },
@@ -17,7 +16,7 @@ export class CanvasSectionComponent  implements OnInit {
   ];
 
   constructor() {
-    this.editIconActive = "";
+    
    }
 
   ngOnInit() {}

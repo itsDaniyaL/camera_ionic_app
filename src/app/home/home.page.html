@@ -6,9 +6,11 @@
     <app-edit-icons [editIconActive]="editIconActive" (editSelected)="editSelected($event)"></app-edit-icons>
   </div>
 
-<app-canvas-section [editIconActive]="editIconActive"></app-canvas-section>
-<app-adjust-section [editIconActive]="editIconActive"></app-adjust-section>
-
+<div class="bottom-container" [ngClass]="{'show': editIconActive.length}">
+  <app-canvas-section *ngIf="editIconActive === 'Canvas'"></app-canvas-section>
+  <app-adjust-section *ngIf="editIconActive === 'Adjust'"></app-adjust-section>
+  <app-effect-section *ngIf="editIconActive === 'Effect'"></app-effect-section>
+</div>
 
 
   <!-- This limit. -->
