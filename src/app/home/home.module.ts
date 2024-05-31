@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,7 @@ import { TopBarIconsComponent } from '../top-bar-icons/top-bar-icons.component';
 import { EditIconsComponent } from '../edit-icons/edit-icons.component';
 import { CanvasSectionComponent } from '../canvas-section/canvas-section.component';
 import { AdjustSectionComponent } from '../adjust-section/adjust-section.component';
+import { EffectSectionComponent } from '../effect-section/effect-section.component';
 import { AcceptRejectButtonComponent } from '../accept-reject-button/accept-reject-button.component';
 import { EffectsSliderComponent } from '../effects-slider/effects-slider.component';
 
@@ -20,8 +21,9 @@ import { EffectsSliderComponent } from '../effects-slider/effects-slider.compone
     IonicModule,
     HomePageRoutingModule,
   ],
-  declarations: [EffectsSliderComponent, HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, AcceptRejectButtonComponent],
-  exports: [EffectsSliderComponent, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, AcceptRejectButtonComponent],
+  declarations: [EffectsSliderComponent, HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, EffectSectionComponent, AcceptRejectButtonComponent],
+  exports: [EffectsSliderComponent, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, EffectSectionComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, AcceptRejectButtonComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePageModule { }
