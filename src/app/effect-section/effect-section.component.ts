@@ -13,15 +13,35 @@ export class EffectSectionComponent  implements OnInit {
     spaceBetween: 10
   };
 
-  items = [
-    { src: 'assets/images/Ellipse.png', alt: 'Image 1' },
-    { src: 'assets/images/Ellipse.png', alt: 'Image 2' },
-    { src: 'assets/images/Ellipse.png', alt: 'Image 3' },
-    { src: 'assets/images/Ellipse.png', alt: 'Image 4' },
-    { src: 'assets/images/Ellipse.png', alt: 'Image 5' },
-    { src: 'assets/images/Ellipse.png', alt: 'Image 6' },
-    { src: 'assets/images/Ellipse.png', alt: 'Image 7' },
-  ];
+  filterClasses = [
+    { className: 'default', title: 'Default' },
+    { className: 'chrome', title: 'Chrome' },
+    { className: 'fade', title: 'Fade' },
+    { className: 'cold', title: 'Cold' },
+    { className: 'warm', title: 'Warm' },
+    { className: 'pastel', title: 'Pastel' },
+    { className: 'mono', title: 'Mono' },
+    { className: 'noir', title: 'Noir' },
+    { className: 'stark', title: 'Stark' },
+    { className: 'wash', title: 'Wash' },
+    { className: 'sepia', title: 'Sepia' },
+    { className: 'rust', title: 'Rust' },
+    { className: 'blues', title: 'Blues' },
+    { className: 'color', title: 'Color' },
+    { className: 'brightness', title: 'Brightness' },
+    { className: 'contrast', title: 'Contrast' },
+    { className: 'saturation', title: 'Saturation' },
+    { className: 'exposure', title: 'Exposure' },
+    { className: 'temperature', title: 'Temperature' },
+    { className: 'gamma', title: 'Gamma' },
+    { className: 'clarity', title: 'Clarity' },
+    { className: 'vignette', title: 'Vignette' },
+    { className: 'shadows', title: 'Shadows' },
+    { className: 'highlights', title: 'Highlights' },
+    { className: 'sharpen', title: 'Sharpen' },
+    { className: 'blur', title: 'Blur' }
+];
+
 
   constructor() { 
   }

@@ -1,20 +1,10 @@
-<!-- <swiper-container [options]="slideOpts" class="carousel">
-  <swiper-slide *ngFor="let item of items">
-    <div class="carousel-item">
-      <img [src]="item.src" [alt]="item.alt">
-    </div>
-  </swiper-slide>
-</swiper-container> -->
-
-<swiper-container class="mySwiper">
-
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 4</swiper-slide>
-  <swiper-slide>Slide 5</swiper-slide>
-  <swiper-slide>Slide 6</swiper-slide>
-  <swiper-slide>Slide 7</swiper-slide>
-  <swiper-slide>Slide 8</swiper-slide>
-  <swiper-slide>Slide 9</swiper-slide>
-</swiper-container>
+<div class="swiper-container">
+  <swiper-container [slidesPerView]="'5'" [spaceBetween]="-20">
+    <swiper-slide *ngFor="let filter of filterClasses">
+      <div class="image-container"> 
+        <img src="assets/images/belgium.jpg" alt="Image 1" [ngClass]="filter.className">
+        <p>{{filter.title}}</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>
