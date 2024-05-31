@@ -14,7 +14,7 @@
   <app-canvas-section id="ratio-canvas-section" [editIconActive]="editIconActive"
   (ratioClickedEmitter)="setDivSizeToRatio($event)" *ngIf="editIconActive === 'Canvas'"></app-canvas-section>
   <app-adjust-section  [editIconActive]="editIconActive" *ngIf="editIconActive === 'Adjust'"></app-adjust-section>
-  <app-effect-section *ngIf="editIconActive === 'Effect'"></app-effect-section>
+  <app-effect-section *ngIf="editIconActive === 'Effect'" [imageURL]="imageURL"></app-effect-section>
 </div>
 
 
