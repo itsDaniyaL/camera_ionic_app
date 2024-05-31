@@ -20,13 +20,13 @@
   <!-- This limit. -->
 
 
-  <app-effects-slider></app-effects-slider>
+  <!-- <app-effects-slider></app-effects-slider> -->
 
 
   <ion-button *ngIf="!imageURL" (click)="openCamera()" expand="block" fill="clear" shape="round">
     Open Camera App
   </ion-button>
-  <img class="photo-image" *ngIf="imageURL" [src]="imageURL" alt="">
+  <img id="photo-image" class="photo-image" *ngIf="imageURL" [src]="imageURL" alt="">
   <div [ngStyle]="{'display': ratioWindow ? '' : 'none'}" id="draggable" class="draggable">
     <div class="resize-handle resize-handle-n"></div>
     <div class="resize-handle resize-handle-e"></div>

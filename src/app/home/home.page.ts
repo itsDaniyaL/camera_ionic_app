@@ -67,7 +67,7 @@ export class HomePage {
     const ratio = event?.label || null;
     if (ratio) {
       if (ratio === '1:1') {
-        this.setBoxSizeAndLocation((window.screen.availWidth - (window.screen.availWidth / 2)).toString(), '0', '100vw', '100vw');
+        this.setBoxSizeAndLocation((window.screen.availWidth - (window.screen.availWidth / 2)).toString(), '0', window.screen.availWidth + 'px', window.screen.availWidth + 'px');
       }
       else if (ratio == '16:9') {
       }
@@ -77,6 +77,30 @@ export class HomePage {
         }
       }
     }
+  }
+
+  cropImage(): Promise<HTMLCanvasElement> {
+    return new Promise((resolve, reject) => {
+      const image = document.getElementById('photo-image') as HTMLImageElement;
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      if (!ctx) {
+        reject('Failed to get 2D context');
+        return;
+      }
+
+      canvas.width = parseInt(this.draggable.style.width);
+      canvas.height = parseInt(this.draggable.style.height);
+      ctx.drawImage(image, parseInt(this.draggable.style.left), parseInt(this.draggable.style.top), parseInt(this.draggable.style.width), parseInt(this.draggable.style.height), 0, 0, parseInt(this.draggable.style.width), parseInt(this.draggable.style.height));
+      const dataUrl = canvas.toDataURL();
+      this.imageURL = dataUrl;
+      this.toggleRatioCanvas()
+      this.showAcceptRejectButtons = false
+      this.showSideButtons = true
+      this.showRatioCanvasOptions = false
+      resolve(canvas);
+    });
   }
 
   setBoxSizeAndLocation(top: string, left: string, height: string, width: string) {
@@ -94,7 +118,13 @@ export class HomePage {
   }
 
   public acceptRejectHandler(event: string) {
+    if (event === 'accept') {
+      this.cropImage()
+    }
+    else if (event === 'reject') {
 
+    }
+    // (this as any)[event]();
   }
 
   // Exceptional

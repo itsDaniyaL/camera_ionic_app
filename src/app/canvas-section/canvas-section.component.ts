@@ -15,9 +15,6 @@ export class CanvasSectionComponent implements OnInit {
     { width: '16px', height: '20px', label: '3:4' },
     { width: '20px', height: '16px', label: '4:3' },
     { width: '22px', height: '22px', label: '1:1' },
-    { width: '22px', height: '22px', label: '1:1' },
-    { width: '22px', height: '22px', label: '1:1' },
-    { width: '22px', height: '22px', label: '1:1' },
   ];
 
   constructor() {
