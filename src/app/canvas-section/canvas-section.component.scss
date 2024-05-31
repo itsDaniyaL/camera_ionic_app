@@ -1,9 +1,4 @@
-.bottom-container {
-    position: absolute;
-    bottom: 5%;
-    width: 100%;
-  }
-  
+
   .button-container {
     display: flex;
     justify-content: space-evenly;
@@ -47,7 +42,6 @@
   .action-bar {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
   }
   
   .action {

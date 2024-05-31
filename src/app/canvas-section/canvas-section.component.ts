@@ -20,7 +20,7 @@ export class CanvasSectionComponent implements OnInit {
   constructor() {
     this.editIconActive = "";
   }
-
+    
   ngOnInit() { }
 
 

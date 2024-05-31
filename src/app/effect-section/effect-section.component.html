@@ -1,0 +1,10 @@
+<div class="swiper-container">
+  <swiper-container [slidesPerView]="'5'" [spaceBetween]="-20">
+    <swiper-slide *ngFor="let filter of filterClasses">
+      <div class="image-container"> 
+        <img src="assets/images/belgium.jpg" alt="Image 1" [ngClass]="filter.className">
+        <p>{{filter.title}}</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>

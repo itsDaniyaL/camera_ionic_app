@@ -10,10 +10,12 @@
     <app-edit-icons [editIconActive]="editIconActive" (editSelected)="editSelected($event)"></app-edit-icons>
   </div>
 
+<div class="bottom-container" [ngClass]="{'show': editIconActive.length}">
   <app-canvas-section id="ratio-canvas-section" [editIconActive]="editIconActive"
-    (ratioClickedEmitter)="setDivSizeToRatio($event)"></app-canvas-section>
-
-  <app-adjust-section [editIconActive]="editIconActive"></app-adjust-section>
+  (ratioClickedEmitter)="setDivSizeToRatio($event)" *ngIf="editIconActive === 'Canvas'"></app-canvas-section>
+  <app-adjust-section  [editIconActive]="editIconActive" *ngIf="editIconActive === 'Adjust'"></app-adjust-section>
+  <app-effect-section *ngIf="editIconActive === 'Effect'"></app-effect-section>
+</div>
 
 
 
