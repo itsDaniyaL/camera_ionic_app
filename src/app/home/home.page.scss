@@ -67,14 +67,16 @@ p {
   display: flex;
 }
 
-.checking {
-  color: red !important;
-}
-
 .bottom-container {
   position: absolute;
-  bottom: 12%;
+  bottom: 0%;
   width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out 0.3s;
+}
+
+.bottom-container.show {
+  opacity: 1;
 }
 
 .button-container {

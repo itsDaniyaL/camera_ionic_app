@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./adjust-section.component.scss'],
 })
 export class AdjustSectionComponent  implements OnInit {
-  @Input() editIconActive: string;
 
   adjustButtonsData = [
     { icon: '' },
@@ -19,7 +18,7 @@ export class AdjustSectionComponent  implements OnInit {
   ];
 
   constructor() {
-    this.editIconActive = "";
+    
   }
 
   ngOnInit() {}
