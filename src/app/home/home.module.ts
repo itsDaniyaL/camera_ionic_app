@@ -24,6 +24,5 @@ import { EffectsSliderComponent } from '../effects-slider/effects-slider.compone
   declarations: [EffectsSliderComponent, HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, EffectSectionComponent, AcceptRejectButtonComponent],
   exports: [EffectsSliderComponent, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, EffectSectionComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, AcceptRejectButtonComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePageModule { }
