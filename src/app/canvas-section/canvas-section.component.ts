@@ -1,11 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-canvas-section',
   templateUrl: './canvas-section.component.html',
   styleUrls: ['./canvas-section.component.scss'],
 })
-export class CanvasSectionComponent  implements OnInit {
+export class CanvasSectionComponent implements OnInit {
+  @Input() editIconActive: string;
+  @Output() ratioClickedEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   canvasButtonsData = [
     { width: '15px', height: '22px', label: '9:16' },
@@ -16,9 +18,13 @@ export class CanvasSectionComponent  implements OnInit {
   ];
 
   constructor() {
+    this.editIconActive = "";
+  }
     
-   }
+  ngOnInit() { }
 
-  ngOnInit() {}
 
+  ratioClicked(icon: any) {
+    this.ratioClickedEmitter.emit(icon)
+  }
 }

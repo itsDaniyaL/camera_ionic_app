@@ -54,7 +54,7 @@ p {
   color: white !important;
 }
 
-.top-bar-icon > div {
+.top-bar-icon>div {
   display: flex;
   justify-content: space-between;
   margin: 0 10px;
@@ -132,7 +132,7 @@ p {
 
 .action-ratio {
   font-weight: medium;
-  background: linear-gradient(90deg, rgba(255,153,0,1) 0%, rgba(255,223,141,1) 36%, rgba(209,153,9,1) 67%, rgba(255,231,103,1) 100%);
+  background: linear-gradient(90deg, rgba(255, 153, 0, 1) 0%, rgba(255, 223, 141, 1) 36%, rgba(209, 153, 9, 1) 67%, rgba(255, 231, 103, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -148,6 +148,93 @@ ion-fab-button {
   --color: #ffffff;
 }
 
-.rotate-div{
+.rotate-div {
   transform: rotate(90deg) !important;
 }
+
+#drageblediv {
+  width: 100vw;
+  height: 100vw;
+  background-color: red;
+}
+
+.draggable {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: -10;
+}
+
+.resize-handle {
+  width: 10px;
+  height: 10px;
+  background-color: darkblue;
+  position: absolute;
+}
+
+.resize-handle-n {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: n-resize;
+}
+
+.resize-handle-e {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: e-resize;
+}
+
+.resize-handle-s {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: s-resize;
+}
+
+.resize-handle-w {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: w-resize;
+}
+
+.resize-handle-ne {
+  top: -5px;
+  right: -5px;
+  cursor: ne-resize;
+}
+
+.resize-handle-se {
+  bottom: -5px;
+  right: -5px;
+  cursor: se-resize;
+}
+
+.resize-handle-sw {
+  bottom: -5px;
+  left: -5px;
+  cursor: sw-resize;
+}
+
+.resize-handle-nw {
+  top: -5px;
+  left: -5px;
+  cursor: nw-resize;
+}
+
+.photo-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+

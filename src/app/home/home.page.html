@@ -1,47 +1,42 @@
-
 <ion-content [fullscreen]="true">
-  <app-top-bar-icons></app-top-bar-icons>
 
-  <div id="container">
+
+  <app-accept-reject-button id="accept-reject-button" *ngIf="showAcceptRejectButtons"
+    (acceptRejectButtonEmitter)="acceptRejectHandler($event)"></app-accept-reject-button>
+
+  <app-top-bar-icons *ngIf="showTopButtons"></app-top-bar-icons>
+
+  <div id="container" *ngIf="showSideButtons">
     <app-edit-icons [editIconActive]="editIconActive" (editSelected)="editSelected($event)"></app-edit-icons>
   </div>
 
 <div class="bottom-container" [ngClass]="{'show': editIconActive.length}">
-  <app-canvas-section *ngIf="editIconActive === 'Canvas'"></app-canvas-section>
-  <app-adjust-section *ngIf="editIconActive === 'Adjust'"></app-adjust-section>
-  <app-effect-section *ngIf="editIconActive === 'Effect'"></app-effect-section>
+  <app-canvas-section id="ratio-canvas-section" [editIconActive]="editIconActive"
+  (ratioClickedEmitter)="setDivSizeToRatio($event)" *ngIf="editIconActive === 'Canvas'"></app-canvas-section>
+  <app-adjust-section  [editIconActive]="editIconActive" *ngIf="editIconActive === 'Adjust'"></app-adjust-section>
+  <app-effect-section *ngIf="editIconActive === 'Effect'" [imageURL]="imageURL"></app-effect-section>
 </div>
+
 
 
   <!-- This limit. -->
 
 
-  <ion-button *ngIf="!isCameraStarted" (click)="openCamera()" expand="block" fill="clear" shape="round">
+  <!-- <app-effects-slider></app-effects-slider> -->
+
+
+  <ion-button *ngIf="!imageURL" (click)="openCamera()" expand="block" fill="clear" shape="round">
     Open Camera App
   </ion-button>
-
-
-  <!-- Switch camera -->
-  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="start" slot="fixed">
-    <!-- <ion-fab-button (click)="switchCamera()">
-      <ion-icon name="camera-reverse-outline"></ion-icon>
-    </ion-fab-button> -->
-  </ion-fab>
-
-  <!-- Take picture -->
-  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="end" slot="fixed">
-    <!-- <ion-fab-button (click)="stopCamera()">
-      <ion-icon name="close-outline"></ion-icon>
-    </ion-fab-button> -->
-  </ion-fab>
-
-  <!-- open -->
-  <ion-fab *ngIf="isCameraStarted" vertical="bottom" horizontal="center" slot="fixed">
-    <!-- <ion-fab-button (click)="takePicture()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button> -->
-  </ion-fab>
-  <div id="cameraPreview"></div>
-  <!-- <img *ngIf="capturedImage" [src]="capturedImage" style="transform: rotate(-90deg);" alt=""> -->
+  <img id="photo-image" class="photo-image" *ngIf="imageURL" [src]="imageURL" alt="">
+  <div [ngStyle]="{'display': ratioWindow ? '' : 'none'}" id="draggable" class="draggable">
+    <div class="resize-handle resize-handle-n"></div>
+    <div class="resize-handle resize-handle-e"></div>
+    <div class="resize-handle resize-handle-s"></div>
+    <div class="resize-handle resize-handle-w"></div>
+    <div class="resize-handle resize-handle-ne"></div>
+    <div class="resize-handle resize-handle-se"></div>
+    <div class="resize-handle resize-handle-sw"></div>
+    <div class="resize-handle resize-handle-nw"></div>
+  </div>
 </ion-content>
-

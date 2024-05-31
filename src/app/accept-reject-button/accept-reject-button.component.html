@@ -1,0 +1,10 @@
+<div class="accept-reject-class">
+  <ion-fab-button vertical="top" horizontal="start" color="transparent" size="small"
+    (click)="acceptRejectButtonEmitter.emit('reject')">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-button vertical="top" horizontal="end" color="transparent" size="small"
+    (click)="acceptRejectButtonEmitter.emit('accept')">
+    <ion-icon name="checkmark-outline"></ion-icon>
+  </ion-fab-button>
+</div>

@@ -1,6 +1,6 @@
 <div style="margin-bottom: 2em;">
   <div class="button-container">
-    <div *ngFor="let icon of canvasButtonsData" class="button">
+    <div *ngFor="let icon of canvasButtonsData" class="button cursor-pointer" (click)="ratioClicked(icon)">
       <div class="icon-wrapper">
         <div [style.width]="icon.width" [style.height]="icon.height" class="icon"></div>
       </div>

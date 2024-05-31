@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-effect-section',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./effect-section.component.scss'],
 })
 export class EffectSectionComponent  implements OnInit {
+  @Input() imageURL!: any;
+
   slideOpts = {
     initialSlide: 2,
     slidesPerView: 5,
@@ -43,7 +45,7 @@ export class EffectSectionComponent  implements OnInit {
 ];
 
 
-  constructor() { 
+  constructor() {
   }
 
   updateCarousel(): void {
