@@ -17,7 +17,7 @@ export class EditIconsComponent implements OnInit {
     { src: 'assets/svg/music-icon.svg', text: 'Music', action: '' },
     { src: 'assets/svg/sticker-icon.svg', text: 'Sticker', action: '' },
     { src: 'assets/svg/text-icon.svg', text: 'Text', action: '' },
-    { src: 'assets/svg/canvas-icon.svg', text: 'Canvas', action: '' },
+    { src: 'assets/svg/canvas-icon.svg', text: 'Canvas', action: 'toggleRatioCanvas' },
   ];
 
   constructor() { 
