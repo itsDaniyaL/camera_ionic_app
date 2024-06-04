@@ -1,6 +1,5 @@
 <ion-content [fullscreen]="true">
 
-
   <app-accept-reject-button id="accept-reject-button" *ngIf="showAcceptRejectButtons"
     (acceptRejectButtonEmitter)="acceptRejectHandler($event)"></app-accept-reject-button>
 
@@ -10,25 +9,27 @@
     <app-edit-icons [editIconActive]="editIconActive" (editSelected)="editSelected($event)"></app-edit-icons>
   </div>
 
-<div class="bottom-container" [ngClass]="{'show': editIconActive.length}">
-  <app-canvas-section id="ratio-canvas-section" [editIconActive]="editIconActive"
-  (ratioClickedEmitter)="setDivSizeToRatio($event)" *ngIf="editIconActive === 'Canvas'"></app-canvas-section>
-  <app-adjust-section  [editIconActive]="editIconActive" *ngIf="editIconActive === 'Adjust'"></app-adjust-section>
-  <app-effect-section *ngIf="editIconActive === 'Effect'" [imageURL]="imageURL"></app-effect-section>
-</div>
-
-
+  <div class="bottom-container" [ngClass]="{'show': editIconActive.length}">
+    <app-canvas-section id="ratio-canvas-section" [editIconActive]="editIconActive"
+    (ratioClickedEmitter)="setDivSizeToRatio($event)" *ngIf="editIconActive === 'Canvas'"></app-canvas-section>
+    <app-adjust-section [editIconActive]="editIconActive" *ngIf="editIconActive === 'Adjust'"></app-adjust-section>
+    <app-effect-section *ngIf="editIconActive === 'Effect'" 
+                        [imageURL]="imageURL"
+                        [imageElement]="imageElement?.nativeElement"
+                        [canvasElement]="canvasElement?.nativeElement"></app-effect-section>
+  </div>
 
   <!-- This limit. -->
-
-
-  <!-- <app-effects-slider></app-effects-slider> -->
 
 
   <ion-button *ngIf="!imageURL" (click)="openCamera()" expand="block" fill="clear" shape="round">
     Open Camera App
   </ion-button>
-  <img id="photo-image" class="photo-image" *ngIf="imageURL" [src]="imageURL" alt="">
+  
+  <img #imageElement id="photo-image" class="photo-image" *ngIf="imageURL" [src]="imageURL" alt="">
+  
+  <canvas #canvasElement></canvas>
+  
   <div [ngStyle]="{'display': ratioWindow ? '' : 'none'}" id="draggable" class="draggable">
     <div class="resize-handle resize-handle-n"></div>
     <div class="resize-handle resize-handle-e"></div>

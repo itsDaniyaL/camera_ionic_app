@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 // import { CameraPreview, CameraPreviewOptions } from '@awesome-cordova-plugins/camera-preview/ngx';
 import { CameraPreview } from '@capacitor-community/camera-preview';
 
@@ -10,6 +10,8 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  @ViewChild('imageElement') imageElement!: any;
+  @ViewChild('canvasElement') canvasElement!: any;
   public editIconActive = "";
   public ratioWindow = false
   public showSideButtons = false

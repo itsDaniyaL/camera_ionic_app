@@ -34,3 +34,27 @@ swiper-slide {
     align-items: center;
     justify-content: center;
 }
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-canvas-container {
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -10,7 +10,6 @@ import { EditIconsComponent } from '../edit-icons/edit-icons.component';
 import { CanvasSectionComponent } from '../canvas-section/canvas-section.component';
 import { AdjustSectionComponent } from '../adjust-section/adjust-section.component';
 import { AcceptRejectButtonComponent } from '../accept-reject-button/accept-reject-button.component';
-import { EffectsSliderComponent } from '../effects-slider/effects-slider.component';
 import { EffectSectionComponent } from '../effect-section/effect-section.component';
 
 

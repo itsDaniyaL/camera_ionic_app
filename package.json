@@ -38,6 +38,7 @@
     "@ionic/angular": "^8.0.0",
     "@ionic/pwa-elements": "^3.3.0",
     "cordova-plugin-camera-preview": "^0.12.3",
+    "face-api.js": "^0.22.2",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "swiper": "^11.1.4",
@@ -70,7 +71,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.2.2"
+    "typescript": "^5.4.5"
   },
   "description": "An Ionic project"
 }

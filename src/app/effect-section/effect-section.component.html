@@ -1,5 +1,5 @@
 <div class="swiper-container">
-  <swiper-container [slidesPerView]="'5'" [spaceBetween]="-20">
+  <swiper-container [slidesPerView]="'5'" [spaceBetween]="10" [centeredSlides]="true">
     <swiper-slide *ngFor="let filter of filterClasses">
       <div class="image-container">
         <img [src]="imageURL" [alt]="filter.title" [ngClass]="filter.className">
