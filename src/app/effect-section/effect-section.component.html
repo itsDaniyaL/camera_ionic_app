@@ -1,6 +1,6 @@
 <div class="swiper-container">
   <swiper-container [slidesPerView]="'5'" [spaceBetween]="-20">
-    <swiper-slide *ngFor="let filter of filterClasses">
+    <swiper-slide *ngFor="let filter of filterClasses" (click)="ratioClicked(filter)">
       <div class="image-container">
         <img [src]="imageURL" [alt]="filter.title" [ngClass]="filter.className">
         <p>{{filter.title}}</p>

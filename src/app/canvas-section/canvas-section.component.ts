@@ -10,6 +10,7 @@ export class CanvasSectionComponent implements OnInit {
   @Output() ratioClickedEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   canvasButtonsData = [
+    { width: '16px', height: '20px', label: 'Custom' },
     { width: '15px', height: '22px', label: '9:16' },
     { width: '22px', height: '15px', label: '16:9' },
     { width: '16px', height: '20px', label: '3:4' },

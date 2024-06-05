@@ -21,8 +21,8 @@ import { EffectSectionComponent } from '../effect-section/effect-section.compone
     IonicModule,
     HomePageRoutingModule,
   ],
-  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent,AcceptRejectButtonComponent, EffectSectionComponent],
-  exports: [TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent,AcceptRejectButtonComponent, EffectSectionComponent],
+  declarations: [HomePage, TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, AcceptRejectButtonComponent, EffectsSliderComponent, EffectSectionComponent],
+  exports: [TopBarIconsComponent, EditIconsComponent, CanvasSectionComponent, AdjustSectionComponent, AcceptRejectButtonComponent, EffectsSliderComponent, EffectSectionComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePageModule { }

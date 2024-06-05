@@ -32,10 +32,6 @@ export class HomePage {
       return;
     }
     this.editIconActive = icon.text;
-    this.showSideButtons = !this.showSideButtons
-    // this.showTopButtons = !this.showTopButtons
-
-
     if (icon.action !== '') {
       (this as any)[icon.action]();
     }
@@ -59,7 +55,7 @@ export class HomePage {
     this.ratioWindow = !this.ratioWindow
     if (this.ratioWindow) {
       this.makeDragableDiv()
-      this.setDivSizeToRatio({ label: '1:1' });
+      this.setDivSizeToRatio({ label: 'Custom' });
     }
   }
 
@@ -69,6 +65,12 @@ export class HomePage {
       if (ratio === '1:1') {
         this.setBoxSizeAndLocation((window.screen.availWidth - (window.screen.availWidth / 2)).toString(), '0', window.screen.availWidth + 'px', window.screen.availWidth + 'px');
       }
+      else if (ratio == 'Custom') {
+        let minDimension = Math.min(window.screen.availWidth, window.screen.availHeight);
+        let boxSize = minDimension / 2;
+
+        this.setBoxSizeAndLocation(window.screen.availHeight / 4 + '', window.screen.availWidth / 4 + '', boxSize + 'px', boxSize + 'px');
+      }
       else if (ratio == '16:9') {
       }
       else if (ratio == '9:16') {
@@ -77,6 +79,13 @@ export class HomePage {
         }
       }
     }
+  }
+
+  public applyFilter(event: any) {
+    this.showAcceptRejectButtons = true
+    const image = document.getElementById('photo-image') as HTMLImageElement;
+    image.className = '';
+    image.classList.add(event?.className)
   }
 
   cropImage(): Promise<HTMLCanvasElement> {
@@ -119,7 +128,18 @@ export class HomePage {
 
   public acceptRejectHandler(event: string) {
     if (event === 'accept') {
-      this.cropImage()
+      if (this.editIconActive === 'Canvas') {
+        this.cropImage()
+        this.editIconActive = ''
+      }
+      else if (this.editIconActive === 'Effect') {
+        this.showSideButtons = true
+        this.editIconActive = ''
+      }
+      else {
+        this.showSideButtons = true
+        this.editIconActive = ''
+      }
     }
     else if (event === 'reject') {
 
@@ -173,7 +193,8 @@ export class HomePage {
     function onMouseMoveOrTouchMove(e: MouseEvent | TouchEvent) {
       const ratioCanvasSectionOptions = document.getElementById("ratio-canvas-section") as HTMLDivElement;
       const acceptRejectButtonOptions = document.getElementById("accept-reject-button") as HTMLDivElement;
-      ratioCanvasSectionOptions.style.display = acceptRejectButtonOptions.style.display = 'none'
+      const sideBarButtonOptions = document.getElementById("container") as HTMLDivElement;
+      ratioCanvasSectionOptions.style.display = sideBarButtonOptions.style.display = acceptRejectButtonOptions.style.display = 'none'
 
       const clientX = (e instanceof MouseEvent) ? e.clientX : e.touches[0].clientX;
       const clientY = (e instanceof MouseEvent) ? e.clientY : e.touches[0].clientY;
@@ -233,7 +254,8 @@ export class HomePage {
     function onMouseUpOrTouchEnd() {
       const ratioCanvasSectionOptions = document.getElementById("ratio-canvas-section") as HTMLDivElement;
       const acceptRejectButtonOptions = document.getElementById("accept-reject-button") as HTMLDivElement;
-      ratioCanvasSectionOptions.style.display = acceptRejectButtonOptions.style.display = 'block'
+      const sideBarButtonOptions = document.getElementById("container") as HTMLDivElement;
+      ratioCanvasSectionOptions.style.display = sideBarButtonOptions.style.display = acceptRejectButtonOptions.style.display = 'block'
       isDragging = false;
       isResizing = false;
       draggable.style.cursor = "grab";

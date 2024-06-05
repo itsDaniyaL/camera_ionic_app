@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-effect-section',
   templateUrl: './effect-section.component.html',
   styleUrls: ['./effect-section.component.scss'],
 })
-export class EffectSectionComponent  implements OnInit {
+export class EffectSectionComponent implements OnInit {
   @Input() imageURL!: any;
 
   slideOpts = {
@@ -14,6 +14,9 @@ export class EffectSectionComponent  implements OnInit {
     centeredSlides: true,
     spaceBetween: 10
   };
+
+
+  @Output() effectClickedEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   filterClasses = [
     { className: 'default', title: 'Default' },
@@ -42,7 +45,7 @@ export class EffectSectionComponent  implements OnInit {
     { className: 'highlights', title: 'Highlights' },
     { className: 'sharpen', title: 'Sharpen' },
     { className: 'blur', title: 'Blur' }
-];
+  ];
 
 
   constructor() {
@@ -52,5 +55,9 @@ export class EffectSectionComponent  implements OnInit {
     // Angular will automatically handle the DOM updates through the *ngFor directive and class bindings
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  ratioClicked(filter: any) {
+    this.effectClickedEmitter.emit(filter);
+  }
 }
